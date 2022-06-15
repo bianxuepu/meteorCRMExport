@@ -1,0 +1,3 @@
+D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.AssemblyReference.cache
+D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.ResolveComReference.cache
+D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.CoreCompileInputs.cache
