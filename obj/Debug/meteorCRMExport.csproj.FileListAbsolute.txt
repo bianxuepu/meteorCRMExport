@@ -1,3 +1,10 @@
-D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.AssemblyReference.cache
 D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.ResolveComReference.cache
 D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.CoreCompileInputs.cache
+D:\动态主网站\meteorCRMExport\bin\meteorCRMExport.dll.config
+D:\动态主网站\meteorCRMExport\bin\meteorCRMExport.dll
+D:\动态主网站\meteorCRMExport\bin\meteorCRMExport.pdb
+D:\动态主网站\meteorCRMExport\bin\Newtonsoft.Json.dll
+D:\动态主网站\meteorCRMExport\bin\Newtonsoft.Json.xml
+D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.CopyComplete
+D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.dll
+D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.pdb

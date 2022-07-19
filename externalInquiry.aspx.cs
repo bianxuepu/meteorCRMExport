@@ -113,9 +113,16 @@ namespace meteorCRMExport
 
             for (int i = 0; i < Convert.ToInt32(orderModel["number"]); i++)
             {
+                string brandName = productModel[i]["brandName"].ToString().Trim();
+                string strFuze = "";
+                if (brandName.Contains('('))
+                {
+                    strFuze = "(" + brandName.Split('(')[1];
+                }
+
                 excel.Cells[i + 8, 1] = Convert.ToString(i + 1);
                 excel.Cells[i + 8, 2] = productModel[i]["productModel"].ToString().Trim();
-                excel.Cells[i + 8, 3] = productModel[i]["brandName"].ToString().Trim() + ", " + productModel[i]["productName"].ToString().Trim();
+                excel.Cells[i + 8, 3] = brandName.Replace(strFuze, "") + ", " + productModel[i]["productName"].ToString().Trim();
                 
                 excel.Cells[i + 8, 4] = productModel[i]["quantity"].ToString().Trim();
                 excel.Cells[i + 8, 5] = productModel[i]["unit"].ToString().Trim();

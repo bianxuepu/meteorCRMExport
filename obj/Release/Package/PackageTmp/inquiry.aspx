@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inquiry.aspx.cs" Inherits="meteorCRMExport.inquiry" %>

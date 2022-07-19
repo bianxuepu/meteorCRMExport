@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/meteorCRMExport.dll">
+      <publishTime>07/19/2022 14:43:52</publishTime>
+    </File>
+    <File Include="bin/meteorCRMExport.pdb">
+      <publishTime>07/19/2022 14:43:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/09/2019 08:56:46</publishTime>
+    </File>
+    <File Include="bin/QRCoder.dll">
+      <publishTime>11/18/2020 00:57:42</publishTime>
+    </File>
+    <File Include="contract.aspx">
+      <publishTime>01/16/2020 11:39:20</publishTime>
+    </File>
+    <File Include="deliveryLabel.aspx">
+      <publishTime>06/10/2022 09:22:23</publishTime>
+    </File>
+    <File Include="deliveryNote.aspx">
+      <publishTime>06/10/2022 16:01:24</publishTime>
+    </File>
+    <File Include="externalInquiry.aspx">
+      <publishTime>07/13/2020 20:32:06</publishTime>
+    </File>
+    <File Include="image/00001.gif">
+      <publishTime>06/26/2014 14:12:00</publishTime>
+    </File>
+    <File Include="image/000012logosno.jpg">
+      <publishTime>11/07/2015 10:14:46</publishTime>
+    </File>
+    <File Include="image/00001logo.jpg">
+      <publishTime>10/22/2015 11:59:19</publishTime>
+    </File>
+    <File Include="image/00001logosno.jpg">
+      <publishTime>10/23/2015 15:36:44</publishTime>
+    </File>
+    <File Include="image/00001OC.png">
+      <publishTime>04/29/2010 16:25:01</publishTime>
+    </File>
+    <File Include="image/00001sno.png">
+      <publishTime>02/03/2009 14:05:31</publishTime>
+    </File>
+    <File Include="image/00002.gif">
+      <publishTime>03/10/2020 03:27:42</publishTime>
+    </File>
+    <File Include="image/000022logosno.jpg">
+      <publishTime>11/07/2015 10:08:48</publishTime>
+    </File>
+    <File Include="image/00002logo.jpg">
+      <publishTime>11/04/2015 11:00:27</publishTime>
+    </File>
+    <File Include="image/00002logosno.jpg">
+      <publishTime>11/04/2015 11:01:21</publishTime>
+    </File>
+    <File Include="image/00002OC.png">
+      <publishTime>03/29/2017 10:42:25</publishTime>
+    </File>
+    <File Include="image/00002sno.png">
+      <publishTime>03/29/2017 10:52:27</publishTime>
+    </File>
+    <File Include="image/00003.gif">
+      <publishTime>03/10/2020 03:24:15</publishTime>
+    </File>
+    <File Include="image/000032logosno.jpg">
+      <publishTime>03/10/2020 03:19:25</publishTime>
+    </File>
+    <File Include="image/00003logo.jpg">
+      <publishTime>03/10/2020 02:45:41</publishTime>
+    </File>
+    <File Include="image/00003logosno.jpg">
+      <publishTime>03/10/2020 02:46:37</publishTime>
+    </File>
+    <File Include="image/00003OC.png">
+      <publishTime>03/10/2020 03:13:37</publishTime>
+    </File>
+    <File Include="image/00003sno.png">
+      <publishTime>03/10/2020 03:17:52</publishTime>
+    </File>
+    <File Include="image/00004.gif">
+      <publishTime>06/26/2014 14:12:00</publishTime>
+    </File>
+    <File Include="image/000042logosno.jpg">
+      <publishTime>03/13/2020 23:06:11</publishTime>
+    </File>
+    <File Include="image/00004logo.jpg">
+      <publishTime>03/13/2020 23:08:59</publishTime>
+    </File>
+    <File Include="image/00004logosno.jpg">
+      <publishTime>03/13/2020 23:07:33</publishTime>
+    </File>
+    <File Include="image/00004OC.png">
+      <publishTime>10/17/2019 12:58:07</publishTime>
+    </File>
+    <File Include="image/00004sno.png">
+      <publishTime>10/17/2019 13:05:59</publishTime>
+    </File>
+    <File Include="image/footline.jpg">
+      <publishTime>11/07/2015 10:18:53</publishTime>
+    </File>
+    <File Include="image/footline2.jpg">
+      <publishTime>11/07/2015 10:07:04</publishTime>
+    </File>
+    <File Include="image/icon.jpg">
+      <publishTime>03/29/2012 16:34:51</publishTime>
+    </File>
+    <File Include="innerInvoice.aspx">
+      <publishTime>03/12/2020 12:11:14</publishTime>
+    </File>
+    <File Include="inquiry.aspx">
+      <publishTime>01/17/2020 15:31:11</publishTime>
+    </File>
+    <File Include="packageList.aspx">
+      <publishTime>06/10/2022 16:29:14</publishTime>
+    </File>
+    <File Include="process.aspx">
+      <publishTime>01/16/2020 17:15:11</publishTime>
+    </File>
+    <File Include="purchaseContract.aspx">
+      <publishTime>03/10/2020 00:29:24</publishTime>
+    </File>
+    <File Include="quotation.aspx">
+      <publishTime>01/11/2020 21:09:09</publishTime>
+    </File>
+    <File Include="salesInvoice.aspx">
+      <publishTime>03/11/2020 14:52:25</publishTime>
+    </File>
+    <File Include="salesInvoiceDetails.aspx">
+      <publishTime>03/13/2020 15:15:43</publishTime>
+    </File>
+    <File Include="salesReceivable.aspx">
+      <publishTime>04/26/2020 11:50:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/19/2022 14:38:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
