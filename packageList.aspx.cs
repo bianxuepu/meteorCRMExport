@@ -113,7 +113,7 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[7, 1], excel.Cells[7, 6]].RowHeight = 25.5;
             xSt.Range[excel.Cells[7, 1], excel.Cells[7, 6]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             xSt.Cells[7, 1] = "序号";
-            xSt.Cells[7, 2] = "产品货号";
+            xSt.Cells[7, 2] = "产品型号";
             xSt.Cells[7, 3] = "产品描述";
             xSt.Cells[7, 4] = "送货数量";
             xSt.Cells[7, 5] = "单位";
@@ -140,12 +140,12 @@ namespace meteorCRMExport
                 excel.Cells[j, 3].WrapText = true;
                 excel.Cells[j, 3] = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductName"].ToString().Trim() : productModel[i]["Product_Brand"]["chineseName"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) ? "" : "/" + productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) + "　" + productModel[i]["Product_Product"]["name"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["package"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["package"].ToString().Trim())) + " ";
 
-                xSt.Cells[j, 4] = productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2");
+                xSt.Cells[j, 4] = productModel[i]["Sales_OutboundOrderProduct"]!=null ? productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2") : productModel[i]["Sales_OrderProduct"]["quantity"].ToString("N2");
                 xSt.Cells[j, 5] = productModel[i]["Product_Product"]["unit"];
-                xSt.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]["remark"];
+                xSt.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]!= null ? productModel[i]["Sales_OutboundOrderProduct"]["remark"] : productModel[i]["Sales_OrderProduct"]["remark"];
 
-                xSt.Range[excel.Cells[j, 1], excel.Cells[j, 8]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
-                xSt.Range[excel.Cells[j, 1], excel.Cells[j, 8]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;
+                xSt.Range[excel.Cells[j, 1], excel.Cells[j, 6]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+                xSt.Range[excel.Cells[j, 1], excel.Cells[j, 6]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;
 
                 j++;
             }

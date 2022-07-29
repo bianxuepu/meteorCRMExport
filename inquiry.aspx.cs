@@ -62,7 +62,7 @@ namespace meteorCRMExport
             excel.Cells[1, 7] = "报价建议";
             excel.Cells[1, 8] = "推荐供货商【1】";
             excel.Cells[1, 9] = "联系信息【1】";
-            excel.Cells[1, 10] = "税率【1】";
+            excel.Cells[1, 10] = "含税（y|n）【1】";
             excel.Cells[1, 11] = "单价【1】";
             excel.Cells[1, 12] = "单件运费【1】";
             excel.Cells[1, 13] = "最小起订量【1】";
@@ -70,7 +70,7 @@ namespace meteorCRMExport
             excel.Cells[1, 15] = "备注（推荐原因）【1】";
             excel.Cells[1, 16] = "供货商【2】";
             excel.Cells[1, 17] = "联系信息【2】";
-            excel.Cells[1, 18] = "税率【2】";
+            excel.Cells[1, 18] = "含税（y|n）【2】";
             excel.Cells[1, 19] = "单价【2】";
             excel.Cells[1, 20] = "单件运费【2】";
             excel.Cells[1, 21] = "最小起订量【2】";
@@ -78,7 +78,7 @@ namespace meteorCRMExport
             excel.Cells[1, 23] = "备注（推荐原因）【2】";
             excel.Cells[1, 24] = "供货商【3】";
             excel.Cells[1, 25] = "联系信息【3】";
-            excel.Cells[1, 26] = "税率【3】";
+            excel.Cells[1, 26] = "含税（y|n）【3】";
             excel.Cells[1, 27] = "单价【3】";
             excel.Cells[1, 28] = "单件运费【3】";
             excel.Cells[1, 29] = "最小起订量【3】";

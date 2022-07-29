@@ -305,7 +305,7 @@ namespace meteorCRMExport
             xSt1.Range[excel.Cells[11, 1], excel.Cells[11, 8]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = XlLineStyle.xlContinuous;
             excel.Cells[11, 1] = "序号";
             xSt1.Range[excel.Cells[11, 2], excel.Cells[11, 3]].Merge(false);
-            xSt1.Range[excel.Cells[11, 2], excel.Cells[11, 3]].Value2 = "产品货号";
+            xSt1.Range[excel.Cells[11, 2], excel.Cells[11, 3]].Value2 = "产品型号";
             xSt1.Range[excel.Cells[11, 4], excel.Cells[11, 5]].Merge(false);
             xSt1.Range[excel.Cells[11, 4], excel.Cells[11, 5]].Value2 = "产品描述";
             excel.Cells[11, 6] = "送货数量";

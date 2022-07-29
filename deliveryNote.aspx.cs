@@ -110,6 +110,8 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[4, 1], excel.Cells[4, 2]].Value2 = "收货信息：";
 
             xSt.Range[excel.Cells[4, 3], excel.Cells[6, 4]].Merge(false);
+            xSt.Range[excel.Cells[4, 3], excel.Cells[6, 4]].WrapText = true;
+            xSt.Range[excel.Cells[4, 3], excel.Cells[6, 4]].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignTop;
             xSt.Range[excel.Cells[4, 3], excel.Cells[6, 4]].Value2 = orderModel["fhxx"];
 
             xSt.Cells[4, 5].Font.Bold = true;
@@ -136,6 +138,7 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[7, 1], excel.Cells[7, 2]].Merge(false);
             xSt.Range[excel.Cells[7, 1], excel.Cells[7, 2]].Value2 = "客户订单号：";
             xSt.Range[excel.Cells[7, 3], excel.Cells[7, 8]].Merge(false);
+            xSt.Range[excel.Cells[7, 3], excel.Cells[7, 8]].NumberFormat = "@";
             xSt.Range[excel.Cells[7, 3], excel.Cells[7, 8]].Value2 = orderModel["customerOrderNo"];
 
             xSt.Range[excel.Cells[8, 1], excel.Cells[8, 2]].Merge(false);
@@ -159,16 +162,16 @@ namespace meteorCRMExport
             if(orderModel["tbsm"].ToString() != "")
             {
                 xSt.Range[excel.Cells[10, 1], excel.Cells[10, 8]].Merge(false);
-                xSt.Range[excel.Cells[10, 6], excel.Cells[10, 8]].Font.Bold = true;
-                xSt.Range[excel.Cells[10, 6], excel.Cells[10, 8]].Font.Italic = true;
-                xSt.Range[excel.Cells[10, 6], excel.Cells[10, 8]].Font.Size = 12;
-                xSt.Range[excel.Cells[10, 6], excel.Cells[10, 8]].Value2 = "特别说明：" + orderModel["tbsm"];
+                xSt.Range[excel.Cells[10, 1], excel.Cells[10, 8]].Font.Bold = true;
+                xSt.Range[excel.Cells[10, 1], excel.Cells[10, 8]].Font.Italic = true;
+                xSt.Range[excel.Cells[10, 1], excel.Cells[10, 8]].Font.Size = 12;
+                xSt.Range[excel.Cells[10, 1], excel.Cells[10, 8]].Value2 = "特别说明：" + orderModel["tbsm"];
             }
 
             xSt.Range[excel.Cells[11, 1], excel.Cells[11, 8]].RowHeight = 15;
             xSt.Cells[11, 1] = "序号";
             xSt.Range[excel.Cells[11, 2], excel.Cells[11, 3]].Merge(false);
-            xSt.Range[excel.Cells[11, 2], excel.Cells[11, 3]].Value2 = "产品货号";
+            xSt.Range[excel.Cells[11, 2], excel.Cells[11, 3]].Value2 = "产品型号";
             xSt.Range[excel.Cells[11, 4], excel.Cells[11, 5]].Merge(false);
             xSt.Range[excel.Cells[11, 4], excel.Cells[11, 5]].Value2 = "产品描述";
             xSt.Cells[11, 6] = "送货数量";
@@ -189,12 +192,13 @@ namespace meteorCRMExport
                 xSt.Cells[j, 7].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 8]].RowHeight = 36;
-                xSt.Cells[j, 1] = Convert.ToString(i+1);
+                xSt.Cells[j, 1] = productModel[i]["Sales_OrderProduct"]["sortNum"]+1;
                 xSt.Range[excel.Cells[j, 2], excel.Cells[j, 3]].Merge(false);
                 xSt.Range[excel.Cells[j, 2], excel.Cells[j, 3]].WrapText = true;
                 xSt.Range[excel.Cells[j, 2], excel.Cells[j, 3]].NumberFormat = "@";
                 xSt.Range[excel.Cells[j, 2], excel.Cells[j, 3]].Value2 = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductModel"].ToString().Trim() : productModel[i]["Product_Product"]["proNo"].ToString().Trim()) + " ";
                 xSt.Range[excel.Cells[j, 4], excel.Cells[j, 5]].Merge(false);
+                xSt.Range[excel.Cells[j, 4], excel.Cells[j, 5]].WrapText = true;
                 xSt.Range[excel.Cells[j, 4], excel.Cells[j, 5]].Value2 = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductName"].ToString().Trim() : productModel[i]["Product_Brand"]["chineseName"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) ? "" : "/" + productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) + "　" + productModel[i]["Product_Product"]["name"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["package"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["package"].ToString().Trim())) + " ";
                 excel.Cells[j, 6].NumberFormat = "@";
                 xSt.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2");

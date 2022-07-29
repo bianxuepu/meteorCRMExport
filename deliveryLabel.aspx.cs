@@ -97,9 +97,11 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[1, 2], excel.Cells[1, 2]].ColumnWidth = 35.0f;
             xSt.Range[excel.Cells[1, 3], excel.Cells[1, 3]].ColumnWidth = 0.85f;
 
-            Bitmap bitmap1 = this.code("http://erp1.mro9.com/app?reurl=/Product/Product/updatePictureBySalesOrderProductId/" + _id);
-            bitmap1.Save(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + _id.ToString() + ".png");
-
+            for (int i = 0; i < Convert.ToInt32(number); i++)
+            {
+                Bitmap bitmap1 = this.code("http://erp1.mro9.com/app?reurl=/Product/Product/updatePictureBySalesOrderProductId/" + products[i]["_id"].ToString());
+                bitmap1.Save(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + products[i]["_id"].ToString() + ".png");
+            }
 
             for (int i = 0; i < Convert.ToInt32(number); i++) {
                 rowIndex++;
@@ -114,7 +116,7 @@ namespace meteorCRMExport
                 xSt.Shapes.AddPicture(this.Server.MapPath("~/").ToString().Trim() + "image\\" + companyId.ToString() + ".gif", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 99f, num, 125f, 10f);
 
                 num = (float)i * 171.75f + 20.0f;
-                xSt.Shapes.AddPicture(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + _id.ToString() + ".png", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 184, num, 40, 40);
+                xSt.Shapes.AddPicture(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + products[i]["_id"].ToString() + ".png", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 184, num, 40, 40);
 
                 rowIndex++;
                 xSt.Range[excel.Cells[rowIndex, 1], excel.Cells[rowIndex, 3]].RowHeight = 13.5f;
@@ -154,7 +156,7 @@ namespace meteorCRMExport
                 xSt.Range[excel.Cells[rowIndex, 2], excel.Cells[rowIndex, 2]].Font.Size = 8;
                 xSt.Range[excel.Cells[rowIndex, 2], excel.Cells[rowIndex, 2]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
                 xSt.Range[excel.Cells[rowIndex, 2], excel.Cells[rowIndex, 2]].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
-                excel.Cells[rowIndex, 2] = "货号：" + products[i]["proNo"].ToString();
+                excel.Cells[rowIndex, 2] = "型号：" + products[i]["proNo"].ToString();
 
                 rowIndex++;
                 xSt.Range[excel.Cells[rowIndex, 1], excel.Cells[rowIndex, 3]].RowHeight = 25.5f;
@@ -221,9 +223,12 @@ namespace meteorCRMExport
 
             try
             {
-                if (File.Exists(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + _id.ToString() + ".png"))
+                for (int i = 0; i < Convert.ToInt32(number); i++)
                 {
-                    File.Delete(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + _id.ToString() + ".png");
+                    if (File.Exists(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + products[i]["_id"].ToString() + ".png"))
+                    {
+                        File.Delete(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + products[i]["_id"].ToString() + ".png");
+                    }
                 }
             }
             catch (Exception ex)
