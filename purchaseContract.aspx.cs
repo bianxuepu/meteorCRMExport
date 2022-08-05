@@ -90,7 +90,7 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[2, 1], excel.Cells[4, 7]].RowHeight = 15;
 
             excel.Cells[2, 1] = "买方：" + companyModel["name"].ToString().Trim();
-            excel.Cells[3, 1] = "卖方：" + supplierModel["supplierName"].ToString().Trim();
+            excel.Cells[3, 1] = "卖方：" + (orderModel["supplierAnotherName"].ToString().Trim()!="" ? orderModel["supplierAnotherName"].ToString().Trim() : supplierModel["supplierName"].ToString().Trim());
             excel.Cells[4, 1] = "签订日期：" + Convert.ToDateTime(orderModel["recordDate"].ToString()).ToString("yyyy年MM月dd日");
 
             xSt.Range[excel.Cells[5, 1], excel.Cells[5, 7]].RowHeight = 12;
@@ -274,14 +274,14 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[j + 21, 1], excel.Cells[j + 28, 1]].RowHeight = 18;
 
             excel.Cells[j + 21, 1] = "买方：" + companyModel["name"].ToString().Trim();
-            excel.Cells[j + 21, 4] = "卖方：" + supplierModel["supplierName"].ToString().Trim();
+            excel.Cells[j + 21, 4] = "卖方：" + (orderModel["supplierAnotherName"].ToString().Trim() != "" ? orderModel["supplierAnotherName"].ToString().Trim() : supplierModel["supplierName"].ToString().Trim());
             excel.Cells[j + 22, 1] = "买方代表：" + orderModel["personInChargeName"].ToString().Trim() + "　" + userModel["mobilePhone"].ToString().Trim();
             excel.Cells[j + 22, 4] = "卖方代表：" + orderModel["contactName"].ToString().Trim() + "　" + supplierModel["mobilePhone"].ToString().Trim();
             xSt.Range[excel.Cells[j + 22, 5], excel.Cells[j + 22, 5]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
             excel.Cells[j + 23, 1] = "买方公章：";
             excel.Cells[j + 23, 4] = "卖方公章：";
             excel.Cells[j + 24, 1] = "社会信用代码：" + companyModel["license"]["code"];
-            excel.Cells[j + 24, 4] = "社会信用代码：" + supplierModel["tin"];
+            excel.Cells[j + 24, 4] = "社会信用代码：" + (orderModel["supplierAnotherName"].ToString().Trim() != "" ? "" : supplierModel["tin"].ToString().Trim());
             excel.Cells[j + 25, 1] = "开户行：" + companyModel["license"]["bank"];
             excel.Cells[j + 25, 4] = "开户行：";
             try
