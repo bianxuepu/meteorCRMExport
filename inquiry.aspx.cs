@@ -54,39 +54,47 @@ namespace meteorCRMExport
             excel.DisplayAlerts = false;
 
             excel.Cells[1, 1] = "_id";
-            excel.Cells[1, 2] = "产品号";
-            excel.Cells[1, 3] = "产品名称";
-            excel.Cells[1, 4] = "品牌";
-            excel.Cells[1, 5] = "数量";
-            excel.Cells[1, 6] = "单位";
-            excel.Cells[1, 7] = "报价建议";
-            excel.Cells[1, 8] = "推荐供货商【1】";
-            excel.Cells[1, 9] = "联系信息【1】";
-            excel.Cells[1, 10] = "含税（y|n）【1】";
-            excel.Cells[1, 11] = "单价【1】";
-            excel.Cells[1, 12] = "单件运费【1】";
-            excel.Cells[1, 13] = "最小起订量【1】";
-            excel.Cells[1, 14] = "交货期【1】";
-            excel.Cells[1, 15] = "备注（推荐原因）【1】";
-            excel.Cells[1, 16] = "供货商【2】";
-            excel.Cells[1, 17] = "联系信息【2】";
-            excel.Cells[1, 18] = "含税（y|n）【2】";
-            excel.Cells[1, 19] = "单价【2】";
-            excel.Cells[1, 20] = "单件运费【2】";
-            excel.Cells[1, 21] = "最小起订量【2】";
-            excel.Cells[1, 22] = "交货期【2】";
-            excel.Cells[1, 23] = "备注（推荐原因）【2】";
-            excel.Cells[1, 24] = "供货商【3】";
-            excel.Cells[1, 25] = "联系信息【3】";
-            excel.Cells[1, 26] = "含税（y|n）【3】";
-            excel.Cells[1, 27] = "单价【3】";
-            excel.Cells[1, 28] = "单件运费【3】";
-            excel.Cells[1, 29] = "最小起订量【3】";
-            excel.Cells[1, 30] = "交货期【3】";
-            excel.Cells[1, 31] = "备注（推荐原因）【3】";
+            excel.Cells[1, 2] = "询价型号";
+            excel.Cells[1, 3] = "询价名称";
+            excel.Cells[1, 4] = "询价品牌";
+            excel.Cells[1, 5] = "询价数量";
+            excel.Cells[1, 6] = "询价单位";
 
-            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 31]].HorizontalAlignment = XlHAlign.xlHAlignCenter;//设置标题格式为居中对齐 
-            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 31]].Font.Bold = true;
+            excel.Cells[1, 7] = "产品名称";
+            excel.Cells[1, 8] = "分类名称";
+            excel.Cells[1, 9] = "品牌（中文）";
+            excel.Cells[1, 10] = "制造商型号";
+            excel.Cells[1, 11] = "单位";
+
+
+            excel.Cells[1, 12] = "报价建议";
+            excel.Cells[1, 13] = "推荐供货商【1】";
+            excel.Cells[1, 14] = "联系信息【1】";
+            excel.Cells[1, 15] = "含税（y|n）【1】";
+            excel.Cells[1, 16] = "单价【1】";
+            excel.Cells[1, 17] = "单件运费【1】";
+            excel.Cells[1, 18] = "最小起订量【1】";
+            excel.Cells[1, 19] = "交货期【1】";
+            excel.Cells[1, 20] = "备注（推荐原因）【1】";
+            excel.Cells[1, 21] = "供货商【2】";
+            excel.Cells[1, 22] = "联系信息【2】";
+            excel.Cells[1, 23] = "含税（y|n）【2】";
+            excel.Cells[1, 24] = "单价【2】";
+            excel.Cells[1, 25] = "单件运费【2】";
+            excel.Cells[1, 26] = "最小起订量【2】";
+            excel.Cells[1, 27] = "交货期【2】";
+            excel.Cells[1, 28] = "备注（推荐原因）【2】";
+            excel.Cells[1, 29] = "供货商【3】";
+            excel.Cells[1, 30] = "联系信息【3】";
+            excel.Cells[1, 31] = "含税（y|n）【3】";
+            excel.Cells[1, 32] = "单价【3】";
+            excel.Cells[1, 33] = "单件运费【3】";
+            excel.Cells[1, 34] = "最小起订量【3】";
+            excel.Cells[1, 35] = "交货期【3】";
+            excel.Cells[1, 36] = "备注（推荐原因）【3】";
+
+            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 36]].HorizontalAlignment = XlHAlign.xlHAlignCenter;//设置标题格式为居中对齐 
+            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 36]].Font.Bold = true;
 
             for (int i = 0; i < Convert.ToInt32(orderModel["number"]); i++)
             {
@@ -97,9 +105,9 @@ namespace meteorCRMExport
                 excel.Cells[i + 2, 5] = productModel[i]["quantity"].ToString().Trim();
                 excel.Cells[i + 2, 6] = productModel[i]["unit"].ToString().Trim();
 
-                excel.Cells[i + 2, 10] = "y";
-                excel.Cells[i + 2, 18] = "y";
-                excel.Cells[i + 2, 26] = "y";
+                excel.Cells[i + 2, 15] = "y";
+                excel.Cells[i + 2, 23] = "y";
+                excel.Cells[i + 2, 31] = "y";
 
                 xSt.Range[excel.Cells[i + 2, 1], excel.Cells[i + 2, 6]].HorizontalAlignment = XlHAlign.xlHAlignLeft;//设置标题格式为居中对齐 
                 xSt.Range[excel.Cells[i + 2, 5], excel.Cells[i + 2, 5]].HorizontalAlignment = XlHAlign.xlHAlignCenter;//设置标题格式为居中对齐 
@@ -119,29 +127,29 @@ namespace meteorCRMExport
             Color c4 = Color.FromArgb(141, 180, 227);
             Color c5 = Color.FromArgb(194, 214, 154);
             xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 6]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c1);
-            xSt.Range[excel.Cells[1, 7], excel.Cells[rowSum, 7]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c2);
-            xSt.Range[excel.Cells[1, 8], excel.Cells[rowSum, 15]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c3);
-            xSt.Range[excel.Cells[1, 16], excel.Cells[rowSum, 23]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c4);
-            xSt.Range[excel.Cells[1, 24], excel.Cells[rowSum, 31]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c5);
+            xSt.Range[excel.Cells[1, 12], excel.Cells[rowSum, 12]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c2);
+            xSt.Range[excel.Cells[1, 13], excel.Cells[rowSum, 20]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c3);
+            xSt.Range[excel.Cells[1, 21], excel.Cells[rowSum, 28]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c4);
+            xSt.Range[excel.Cells[1, 29], excel.Cells[rowSum, 36]].Interior.Color = System.Drawing.ColorTranslator.ToOle(c5);
             // 
             //绘制边框 
             // 
-            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 31]].Borders.LineStyle = 1;
+            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 36]].Borders.LineStyle = 1;
             xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 1]].Borders[XlBordersIndex.xlEdgeLeft].Weight = XlBorderWeight.xlThin;//设置左边线加粗 
-            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 31]].Borders[XlBordersIndex.xlEdgeTop].Weight = XlBorderWeight.xlThin;//设置上边线加粗 
-            xSt.Range[excel.Cells[1, 31], excel.Cells[rowSum, 31]].Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlThin;//设置右边线加粗 
-            xSt.Range[excel.Cells[rowSum, 1], excel.Cells[rowSum, 31]].Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlThin;//设置下边线加粗 
+            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 36]].Borders[XlBordersIndex.xlEdgeTop].Weight = XlBorderWeight.xlThin;//设置上边线加粗 
+            xSt.Range[excel.Cells[1, 36], excel.Cells[rowSum, 36]].Borders[XlBordersIndex.xlEdgeRight].Weight = XlBorderWeight.xlThin;//设置右边线加粗 
+            xSt.Range[excel.Cells[rowSum, 1], excel.Cells[rowSum, 36]].Borders[XlBordersIndex.xlEdgeBottom].Weight = XlBorderWeight.xlThin;//设置下边线加粗 
                                                                                                                                                      //
                                                                                                                                                      //设置高度为20
                                                                                                                                                      //
-            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 31]].RowHeight = 23;
-            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 31]].Font.Name = "微软雅黑";
-            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 31]].Font.Size = 9;
+            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 36]].RowHeight = 23;
+            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 36]].Font.Name = "微软雅黑";
+            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 36]].Font.Size = 9;
             // 
             //设置报表表格为最适应宽度 
             // 
-            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 31]].Select();
-            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 31]].Columns.AutoFit();
+            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 36]].Select();
+            xSt.Range[excel.Cells[1, 1], excel.Cells[rowSum, 36]].Columns.AutoFit();
             //
             //冻结窗格
             //
