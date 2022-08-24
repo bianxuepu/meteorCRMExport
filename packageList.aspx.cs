@@ -98,6 +98,7 @@ namespace meteorCRMExport
             xSt.Cells[3, 6].Font.Size = 18;
 
             xSt.Cells[4, 1] = "页码：1-1";
+            xSt.Cells[4, 6].NumberFormat = "@";
             xSt.Cells[4, 6] = orderModel["customerOrderNo"];
             xSt.Cells[4, 6].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
             xSt.Cells[4, 6].Font.Size = 18;
