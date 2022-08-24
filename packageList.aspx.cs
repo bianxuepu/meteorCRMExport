@@ -123,27 +123,27 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[7, 1], excel.Cells[7, 6]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;
 
             int j = 8;
-            for (int i = 0; i < Convert.ToInt32(orderModel["number"]); i++)
+            for (int i = 0; i < Convert.ToInt32(orderModel["numbers"]); i++)
             {
-                xSt.Cells[j, 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-                xSt.Cells[j, 4].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-                xSt.Cells[j, 5].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                excel.Cells[j, 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                excel.Cells[j, 4].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                excel.Cells[j, 5].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 8]].RowHeight = 36;
-                xSt.Cells[j, 1] = Convert.ToString(i + 1);
+                excel.Cells[j, 1] = Convert.ToString(i + 1);
 
                 excel.Cells[j, 2].WrapText = true;
                 excel.Cells[j, 2].NumberFormat = "@";
                 excel.Cells[j, 2] = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductModel"].ToString().Trim() : productModel[i]["Product_Product"]["proNo"].ToString().Trim()) + " ";
-                xSt.Cells[j, 2].Font.Size = 12;
-                xSt.Cells[j, 2].Font.Bold = true;
+                excel.Cells[j, 2].Font.Size = 12;
+                excel.Cells[j, 2].Font.Bold = true;
 
                 excel.Cells[j, 3].WrapText = true;
                 excel.Cells[j, 3] = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductName"].ToString().Trim() : productModel[i]["Product_Brand"]["chineseName"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) ? "" : "/" + productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) + "　" + productModel[i]["Product_Product"]["name"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["package"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["package"].ToString().Trim())) + " ";
 
-                xSt.Cells[j, 4] = productModel[i]["Sales_OutboundOrderProduct"]!=null ? productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2") : productModel[i]["Sales_OrderProduct"]["quantity"].ToString("N2");
-                xSt.Cells[j, 5] = productModel[i]["Product_Product"]["unit"];
-                xSt.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]!= null ? productModel[i]["Sales_OutboundOrderProduct"]["remark"] : productModel[i]["Sales_OrderProduct"]["remark"];
+                excel.Cells[j, 4] = productModel[i]["Sales_OutboundOrderProduct"]!=null ? productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2") : productModel[i]["Sales_OrderProduct"]["quantity"].ToString("N2");
+                excel.Cells[j, 5] = productModel[i]["Product_Product"]["unit"];
+                excel.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]!= null ? productModel[i]["Sales_OutboundOrderProduct"]["remark"] : productModel[i]["Sales_OrderProduct"]["remark"];
 
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 6]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 6]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;

@@ -8,4 +8,3 @@ D:\动态主网站\meteorCRMExport\bin\Newtonsoft.Json.xml
 D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.CopyComplete
 D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.dll
 D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.pdb
-D:\动态主网站\meteorCRMExport\obj\Debug\meteorCRMExport.csproj.AssemblyReference.cache
