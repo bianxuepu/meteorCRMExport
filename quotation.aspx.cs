@@ -227,7 +227,7 @@ namespace meteorCRMExport
 
             excel.Cells[j + 10, 1] = "********************************************************";
             excel.Cells[j + 11, 1] = "为提升我们的服务质量，作为重点客户，您可以直接联系我们的销售总监关于合作、建议、意见和投诉等事宜。";
-            excel.Cells[j + 12, 1] = "邮箱：csr01@mro9.com";
+            excel.Cells[j + 12, 1] = "邮箱：" + companyModel["email"].ToString().Trim();
 
             excel.Visible = true;
 
@@ -309,7 +309,7 @@ namespace meteorCRMExport
             xSt.PageSetup.RightHeader = @"&""微软雅黑""&8" + "QUO NO.：" + quotationModel["quotationNo"].ToString().Trim() + "\nDATE：" + Convert.ToDateTime(quotationModel["quotationTime"]).ToString("yyyy年MM月dd日") + "\n　";
             xSt.PageSetup.LeftFooterPicture.Filename = Server.MapPath("~/").ToString().Trim() + "image\\" + "footline2.jpg";
             xSt.PageSetup.LeftFooter = "&G";
-            xSt.PageSetup.CenterFooter = @"&""微软雅黑""&8" + "共&N页，第&P页\n" + companyModel["name"].ToString().Trim() + "　　地址：" + companyModel["address"].ToString().Trim() + "　　电话：" + companyModel["phone"].ToString().Trim();
+            xSt.PageSetup.CenterFooter = @"&""微软雅黑""&8" + "共&N页，第&P页\n" + "地址：" + companyModel["address"].ToString().Trim() + "　　电话：" + companyModel["phone"].ToString().Trim() + "　　投诉及建议：" + companyModel["email"].ToString().Trim();
 
             excel.Cells.Font.Name = "微软雅黑";
             excel.Cells.Font.Size = 8;
@@ -351,9 +351,9 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[3, 5], excel.Cells[3, 10]].Merge(false);
             xSt.Range[excel.Cells[3, 5], excel.Cells[3, 10]].Value2 = quotationModel["bidderName"].ToString().Trim() + "　" + userModel["mobilePhone"].ToString().Trim();
             xSt.Range[excel.Cells[3, 5], excel.Cells[3, 10]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
-            excel.Cells[4, 4] = "TEL：";
+            excel.Cells[4, 4] = "EMAIL：";
             xSt.Range[excel.Cells[4, 5], excel.Cells[4, 10]].Merge(false);
-            xSt.Range[excel.Cells[4, 5], excel.Cells[4, 10]].Value2 = companyModel["phone"].ToString().Trim() + (string.IsNullOrEmpty(userModel["extensionNum"].ToString()) ? "" : "-" + userModel["extensionNum"].ToString().Trim());
+            xSt.Range[excel.Cells[4, 5], excel.Cells[4, 10]].Value2 = userModel["email"].ToString().Trim();
             xSt.Range[excel.Cells[4, 5], excel.Cells[4, 10]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             xSt.Range[excel.Cells[5, 1], excel.Cells[5, 10]].RowHeight = 9;
@@ -369,8 +369,8 @@ namespace meteorCRMExport
             excel.Cells[6, 6] = "单位\nUNIT";
             excel.Cells[6, 7] = "未税单价\n(N-VAT)";
             excel.Cells[6, 8] = "含税单价\n(VAT)";
-            excel.Cells[6, 9] = "未税金额\nTOTAL (N-VAT)";
-            excel.Cells[6, 10] = "含税金额\nTOTAL (VAT)";
+            excel.Cells[6, 9] = "未税小计\nTOTAL (N-VAT)";
+            excel.Cells[6, 10] = "含税小计\nTOTAL (VAT)";
 
             xSt.Range[excel.Cells[6, 1], excel.Cells[6, 10]].Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
 

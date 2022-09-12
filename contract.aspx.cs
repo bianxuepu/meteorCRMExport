@@ -324,7 +324,7 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[j + 30, 1], excel.Cells[j + 32, 7]].RowHeight = 15.75;
             excel.Cells[j + 30, 1] = "********************************************************";
             excel.Cells[j + 31, 1] = "为提升我们的服务质量，作为重点客户，您可以直接联系我们的销售总监关于合作、建议、意见和投诉等事宜。";
-            excel.Cells[j + 32, 1] = "邮箱：csr01@mro9.com";
+            excel.Cells[j + 32, 1] = "邮箱：" + companyModel["email"].ToString().Trim();
 
             excel.Visible = true;
 
