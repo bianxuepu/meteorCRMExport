@@ -203,6 +203,7 @@ namespace meteorCRMExport
                 excel.Cells[j, 6].NumberFormat = "@";
                 xSt.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2");
                 xSt.Cells[j, 7] = productModel[i]["Product_Product"]["unit"];
+                xSt.Range[excel.Cells[j, 8], excel.Cells[j, 8]].WrapText = true;
                 xSt.Cells[j, 8] = productModel[i]["Sales_OutboundOrderProduct"]["remark"];
 
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 8]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
