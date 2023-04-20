@@ -70,6 +70,13 @@ namespace meteorCRMExport
             xSt.PageSetup.TopMargin = 360.0 / 7.0;
             xSt.PageSetup.BottomMargin = 400.0 / 7.0;
 
+            try
+            {
+                xSt.PageSetup.RightFooter = @"&""微软雅黑""&8" + orderModel["ckdh"];
+            }
+            catch { }
+            
+
             excel.Cells.Font.Name = "微软雅黑";
             excel.Cells.Font.Size = 9;
             excel.Cells.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
@@ -88,8 +95,8 @@ namespace meteorCRMExport
             xSt.Range[excel.Cells[1, 1], excel.Cells[1, 6]].Font.Size = 14;
             xSt.Range[excel.Cells[1, 1], excel.Cells[1, 6]].Font.Bold = true;
             xSt.Range[excel.Cells[1, 1], excel.Cells[1, 6]].Value2 = "送货清单";
-            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 6]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 6]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;
+            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 8]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            xSt.Range[excel.Cells[1, 1], excel.Cells[1, 8]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;
 
             xSt.Shapes.AddPicture(Server.MapPath("~/").ToString().Trim() + "/image/" + companyModel["nid"].ToString().Trim() + ".gif", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 380, 4, 150, 13);
 

@@ -144,7 +144,7 @@ namespace meteorCRMExport
                 excel.Cells[j, 4] = productModel[i]["Sales_OutboundOrderProduct"]!=null ? productModel[i]["Sales_OutboundOrderProduct"]["quantity"].ToString("N2") : productModel[i]["Sales_OrderProduct"]["quantity"].ToString("N2");
                 excel.Cells[j, 5] = productModel[i]["Product_Product"]["unit"];
                 excel.Cells[j, 6] = productModel[i]["Sales_OutboundOrderProduct"]!= null ? productModel[i]["Sales_OutboundOrderProduct"]["remark"] : productModel[i]["Sales_OrderProduct"]["remark"];
-
+                xSt.Range[excel.Cells[j, 6], excel.Cells[j, 6]].WrapText = true;
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 6]].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
                 xSt.Range[excel.Cells[j, 1], excel.Cells[j, 6]].Borders[XlBordersIndex.xlEdgeBottom].Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlHairline;
 

@@ -118,11 +118,12 @@ namespace meteorCRMExport
                 if (brandName.Contains('('))
                 {
                     strFuze = "(" + brandName.Split('(')[1];
+                    brandName = brandName.Replace(strFuze, "") + ", ";
                 }
 
                 excel.Cells[i + 8, 1] = Convert.ToString(i + 1);
                 excel.Cells[i + 8, 2] = productModel[i]["productModel"].ToString().Trim();
-                excel.Cells[i + 8, 3] = brandName.Replace(strFuze, "") + ", " + productModel[i]["productName"].ToString().Trim();
+                excel.Cells[i + 8, 3] = brandName + productModel[i]["productName"].ToString().Trim();
                 
                 excel.Cells[i + 8, 4] = productModel[i]["quantity"].ToString().Trim();
                 excel.Cells[i + 8, 5] = productModel[i]["unit"].ToString().Trim();
