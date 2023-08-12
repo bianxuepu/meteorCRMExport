@@ -274,7 +274,7 @@ namespace meteorCRMExport
             xSt1.Range[excel.Cells[6, 3], excel.Cells[6, 4]].Value2 = orderModel["customerOrderNo"].ToString().Trim();
             excel.Cells[6, 5] = "服务专线：";
             xSt1.Range[excel.Cells[6, 6], excel.Cells[6, 8]].Merge(false);
-            xSt1.Range[excel.Cells[6, 6], excel.Cells[6, 8]].Value2 = "400-816-1658 转 " + userModel["extensionNum"].ToString().Trim();
+            xSt1.Range[excel.Cells[6, 6], excel.Cells[6, 8]].Value2 = companyModel.phone + userModel["extensionNum"] == "" ? "" : "转" + userModel["extensionNum"];
 
             xSt1.Range[excel.Cells[7, 1], excel.Cells[7, 2]].Merge(false);
             xSt1.Range[excel.Cells[7, 1], excel.Cells[7, 2]].Value2 = "申请人：";

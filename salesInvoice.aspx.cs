@@ -165,7 +165,7 @@ namespace meteorCRMExport
                 }
                 excel.Cells[j, 2] = productModel[i]["Sales_InvoiceProduct"]["quotationProductModel"].ToString().Trim();
                 excel.Cells[j, 3] = productModel[i]["Sales_InvoiceProduct"]["quotationProductName"].ToString().Trim();
-                excel.Cells[j, 4] = productModel[i]["Sales_OrderProduct"]["materialNo"].ToString().Trim();
+                excel.Cells[j, 4] = productModel[i]["Sales_OrderProduct"]["materialNo"]==null ? "" : productModel[i]["Sales_OrderProduct"]["materialNo"].ToString().Trim();
                 excel.Cells[j, 5] = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductModel"].ToString().Trim() : productModel[i]["Product_Product"]["proNo"].ToString().Trim()) + " ";
                 excel.Cells[j, 6] = (Convert.ToBoolean(productModel[i]["Sales_OrderProduct"]["isQuotation"].ToString()) ? productModel[i]["Sales_OrderProduct"]["quotationProductName"].ToString().Trim() : productModel[i]["Product_Brand"]["chineseName"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) ? "" : "/" + productModel[i]["Product_Brand"]["englishName"].ToString().Trim()) + "　" + productModel[i]["Product_Product"]["name"].ToString().Trim() + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["ordNo"].ToString().Trim()) + (string.IsNullOrEmpty(productModel[i]["Product_Product"]["package"].ToString().Trim()) ? "" : "　" + productModel[i]["Product_Product"]["package"].ToString().Trim()));
                 try

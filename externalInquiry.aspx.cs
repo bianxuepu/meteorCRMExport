@@ -165,9 +165,9 @@ namespace meteorCRMExport
             //
             //冻结窗格
             //
-            xSt.Application.ActiveWindow.SplitRow = 7;
-            xSt.Application.ActiveWindow.SplitColumn = 0;
-            xSt.Application.ActiveWindow.FreezePanes = true;
+            //xSt.Application.ActiveWindow.SplitRow = 7;
+            //xSt.Application.ActiveWindow.SplitColumn = 0;
+            //xSt.Application.ActiveWindow.FreezePanes = true;
             //
             //设置最后一列的列宽为30
             //
