@@ -234,7 +234,10 @@ namespace meteorCRMExport
             xSt1.Range[excel.Cells[1, 1], excel.Cells[1, 8]].RowHeight = 25;
             xSt1.Range[excel.Cells[1, 1], excel.Cells[1, 8]].Merge(false);
             xSt1.Range[excel.Cells[1, 1], excel.Cells[1, 8]].Value2 = "送货清单";
-            xSt1.Shapes.AddPicture(Server.MapPath("~/").ToString().Trim() + "image\\" + companyModel["nid"].ToString().Trim() + ".gif", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 380, 4, 150, 13);
+            if(companyModel["isHide"].ToString() == "False")
+            {
+                xSt1.Shapes.AddPicture(Server.MapPath("~/").ToString().Trim() + "image\\" + companyModel["nid"].ToString().Trim() + ".gif", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 380, 4, 150, 13);
+            }
             xSt1.Range[excel.Cells[1, 1], excel.Cells[1, 8]].Font.Bold = true;
             xSt1.Range[excel.Cells[1, 1], excel.Cells[1, 8]].Font.Size = 14;
 
@@ -250,7 +253,7 @@ namespace meteorCRMExport
             xSt1.Range[excel.Cells[3, 3], excel.Cells[3, 4]].Value2 = customerModel["customerName"].ToString().Trim();
             excel.Cells[3, 5] = "供货单位：";
             xSt1.Range[excel.Cells[3, 6], excel.Cells[3, 8]].Merge(false);
-            xSt1.Range[excel.Cells[3, 6], excel.Cells[3, 8]].Value2 = companyModel["name"].ToString().Trim();
+            xSt1.Range[excel.Cells[3, 6], excel.Cells[3, 8]].Value2 = (companyModel["isHide"].ToString() == "False" ? companyModel["name"].ToString().Trim() : "");
 
             xSt1.Range[excel.Cells[4, 1], excel.Cells[4, 2]].Merge(false);
             xSt1.Range[excel.Cells[4, 1], excel.Cells[4, 2]].Value2 = "收货信息：";
@@ -274,7 +277,7 @@ namespace meteorCRMExport
             xSt1.Range[excel.Cells[6, 3], excel.Cells[6, 4]].Value2 = orderModel["customerOrderNo"].ToString().Trim();
             excel.Cells[6, 5] = "服务专线：";
             xSt1.Range[excel.Cells[6, 6], excel.Cells[6, 8]].Merge(false);
-            xSt1.Range[excel.Cells[6, 6], excel.Cells[6, 8]].Value2 = companyModel.phone + userModel["extensionNum"] == "" ? "" : "转" + userModel["extensionNum"];
+            xSt1.Range[excel.Cells[6, 6], excel.Cells[6, 8]].Value2 = (companyModel["isHide"].ToString() == "False" ? companyModel.phone + userModel["extensionNum"] == "" ? "" : "转" + userModel["extensionNum"] : "");
 
             xSt1.Range[excel.Cells[7, 1], excel.Cells[7, 2]].Merge(false);
             xSt1.Range[excel.Cells[7, 1], excel.Cells[7, 2]].Value2 = "申请人：";
@@ -390,7 +393,7 @@ namespace meteorCRMExport
             xSt1.Range[excel.Cells[rowIndex + 2, 1], excel.Cells[rowIndex + 2, 8]].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignBottom;
             xSt1.Range[excel.Cells[rowIndex + 2, 1], excel.Cells[rowIndex + 2, 8]].RowHeight = 28;
             xSt1.Range[excel.Cells[rowIndex + 2, 1], excel.Cells[rowIndex + 2, 4]].Merge(false);
-            xSt1.Range[excel.Cells[rowIndex + 2, 1], excel.Cells[rowIndex + 2, 4]].Value2 = companyModel["name"] + "（www.mro9.com）";
+            xSt1.Range[excel.Cells[rowIndex + 2, 1], excel.Cells[rowIndex + 2, 4]].Value2 = (companyModel["isHide"].ToString() == "False" ? companyModel["name"] + "（www.mro9.com）" : "");
             xSt1.Range[excel.Cells[rowIndex + 2, 6], excel.Cells[rowIndex + 2, 6]].Font.Bold = true;
             xSt1.Range[excel.Cells[rowIndex + 2, 6], excel.Cells[rowIndex + 2, 6]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
             excel.Cells[rowIndex + 2, 6] = "日期：";

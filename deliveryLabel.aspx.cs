@@ -113,7 +113,10 @@ namespace meteorCRMExport
                 xSt.Range[excel.Cells[rowIndex, 2], excel.Cells[rowIndex, 2]].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
                 excel.Cells[rowIndex, 2] = "行号：" + products[i]["sortNum"].ToString();
                 float num = (float)i * 171.75f + 8f;
-                xSt.Shapes.AddPicture(this.Server.MapPath("~/").ToString().Trim() + "image\\" + companyId.ToString() + ".gif", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 99f, num, 125f, 10f);
+                if (!String.IsNullOrEmpty(companyId.ToString()))
+                {
+                    xSt.Shapes.AddPicture(this.Server.MapPath("~/").ToString().Trim() + "image\\" + companyId.ToString() + ".gif", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 99f, num, 125f, 10f);
+                }                
 
                 num = (float)i * 171.75f + 20.0f;
                 xSt.Shapes.AddPicture(this.Server.MapPath("~/").ToString().Trim() + "temp\\" + products[i]["_id"].ToString() + ".png", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 184, num, 40, 40);
